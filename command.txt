@@ -1,0 +1,501 @@
+  219  docker ps
+  220  docker ps -a
+  221  docker ps -a
+  222  docker images
+  223  docker run -it 32bd3ae7b9c9 --master=localhost 
+  224  docker images
+  225  docker ps -a
+  226  docker rm 802
+  227  docker ps -a
+  228  netstat -ntlp
+  229  netstat -ano
+  230  docker build -t="hariom-locusts" . > dockerbuild.log
+  231  docker images
+  232  docker run -it -rm 473ea318a403 --master-host=localhost
+  233  docker run -it --rm 473ea318a403 --master-host=localhost
+  234  docker images
+  235  docker run -p 8088:8088 -it --rm 473ea318a403 --master-host=localhost 
+  236  ifconfig
+  237  ipconfig
+  238  ipconfig
+  239  ipconfig >ipconfg
+  240  docker run -it --rm 473ea318a403 --master-host=localhost 
+  241  docker build -t="hariom-locusts" . > dockerbuild.log
+  242  docker images
+  243  docker image rmi 473ea318a403
+  244  docker run -it --rm 841923514ca3 --master-host=localhost 
+  245  docker images
+  246  docker tag 841923514ca3 hmisra/locuststest:workingv1
+  247  docker tags
+  248  docker tag
+  249  docker login --username hmisra --password admin@123
+  250  1. docker push hmisra/locuststest
+  251  1. docker push hmisra/locuststest
+  252  1. docker push hmisra/locuststest
+  253  1. docker push hmisra/locuststest
+  254  1. docker push hmisra/locuststest
+  255  1. docker push hmisra/locuststest
+  256  1. docker push hmisra/locuststest
+  257  sksksk
+  258  docker
+  259  1. docker push hmisra/locuststest
+  260  docker push 
+  261  docker push hmisra/locuststest:workingv1
+  262  docker ps -a
+  263  docker images
+  264  docker run -it --rm 841923514ca3 --master-host=127.0.0.1
+  265  docker run -d -name web1 -p 8081:80 tutum/hello-world
+  266  docker run -d -p 8081:80 tutum/hello-world
+  267  docker images
+  268  docker ps
+  269  docker stop cb6016f16537
+  270  docker ps
+  271  docker ps -a
+  272  docker rm cb6016f16537
+  273  docker ps -a
+  274  docker run -it --rm 841923514ca3 --master-host=localhost
+  275  docker ps -a
+  276  docker build -t="hariom-locusts" . >dockerfile.log
+  277  docker images
+  278  docker run -it -rm 8c0ff0fe2bd8 --master-host=127.0.0.1
+  279  docker run -it --rm 8c0ff0fe2bd8 --master-host=127.0.0.1
+  280  docker run -d -p 80 tutum/hello-world
+  281  docker port af1fdb38c9 80
+  282  curl 0.0.0.0:32768
+  283  curl http://0.0.0.0:32768
+  284  curl http://127.0.0.0:32768
+  285  curl http://0.0.0.0:32768
+  286  docker ps
+  287  curl http://0.0.0.0
+  288  curl http://127.0.0.0
+  289  curl http://0.0.0.0:32768
+  290  curl 0.0.0.0:32768
+  291  curl http://localhost:32768
+  292  docker ps
+  293  docker run -d -p 80 tutum/hello-world
+  294  docker port fcb 80
+  295  curl http://localhost:32769/
+  296  curl http://localhost:32768
+  297  curl http://localhost:32768/
+  298  curl http://0.0.0.0:32768/
+  299  docker ps
+  300  docker stop fcb af1
+  301  docker ps
+  302  docker ps -a
+  303  docker rm fcb af1
+  304  docker ps -a
+  305  docker run -d 841923514ca3 --master-host=localhost
+  306  docker port 2d2
+  307  docker port 2d2 80
+  308  docker port 2d2 8089
+  309  docker port 2d2 8088
+  310  docker port 2d2 *
+  311  docker port 2d2e
+  312  docker port 2d2e 8089
+  313  docker ps
+  314  curl http://127.0.0.1:8088
+  315  curl http://127.0.0.1:557
+  316  curl http://127.0.0.1:5557
+  317  docker port 2d2e 5557
+  318  docker run -d -p 80 tutum/hello-world
+  319  docker ps
+  320  docker port of6 80
+  321  docker port of46 80
+  322  docker port 0f46 80
+  323  docker port 2d2 8080-8089
+  324  docker port 2d2 8088
+  325  docker port 2d2 8088-8089
+  326  docker port 0f6 80
+  327  docker port 0f46 80
+  328  curl http://127.0.0.1:32770
+  329  exit
+  330  #!/bin/bash
+  331  trap '[ "$?" -eq 0 ] || read -p "Looks like something went wrong in step ´$STEP´... Press any key to continue..."' EXIT
+  332  #Quick Hack: used to convert e.g. "C:\Program Files\Docker Toolbox" to "/c/Program Files/Docker Toolbox"
+  333  win_to_unix_path(){  	wd="$(pwd)"; 	cd "$1"; 		the_path="$(pwd)"; 	cd "$wd"; 	echo $the_path; }
+  334  # This is needed  to ensure that binaries provided
+  335  # by Docker Toolbox over-ride binaries provided by
+  336  # Docker for Windows when launching using the Quickstart.
+  337  export PATH="$(win_to_unix_path "${DOCKER_TOOLBOX_INSTALL_PATH}"):$PATH"
+  338  VM=${DOCKER_MACHINE_NAME-default}
+  339  DOCKER_MACHINE="${DOCKER_TOOLBOX_INSTALL_PATH}\docker-machine.exe"
+  340  STEP="Looking for vboxmanage.exe"
+  341  if [ ! -z "$VBOX_MSI_INSTALL_PATH" ]; then   VBOXMANAGE="${VBOX_MSI_INSTALL_PATH}VBoxManage.exe"; else   VBOXMANAGE="${VBOX_INSTALL_PATH}VBoxManage.exe"; fi
+  342  BLUE='\033[1;34m'
+  343  GREEN='\033[0;32m'
+  344  NC='\033[0m'
+  345  #clear all_proxy if not socks address
+  346  if  [[ $ALL_PROXY != socks* ]]; then   unset ALL_PROXY; fi
+  347  if  [[ $all_proxy != socks* ]]; then   unset all_proxy; fi
+  348  if [ ! -f "${DOCKER_MACHINE}" ]; then   echo "Docker Machine is not installed. Please re-run the Toolbox Installer and try again.";   exit 1; fi
+  349  if [ ! -f "${VBOXMANAGE}" ]; then   echo "VirtualBox is not installed. Please re-run the Toolbox Installer and try again.";   exit 1; fi
+  350  "${VBOXMANAGE}" list vms | grep \""${VM}"\" &> /dev/null
+  351  VM_EXISTS_CODE=$?
+  352  set -e
+  353  STEP="Checking if machine $VM exists"
+  354  if [ $VM_EXISTS_CODE -eq 1 ]; then   "${DOCKER_MACHINE}" rm -f "${VM}" &> /dev/null || :;   rm -rf ~/.docker/machine/machines/"${VM}"   if [ "${HTTP_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env HTTP_PROXY=$HTTP_PROXY";   fi;   if [ "${HTTPS_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env HTTPS_PROXY=$HTTPS_PROXY";   fi;   if [ "${NO_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env NO_PROXY=$NO_PROXY";   fi;   "${DOCKER_MACHINE}" create -d virtualbox $PROXY_ENV "${VM}"; fi
+  355  STEP="Checking status on $VM"
+  356  VM_STATUS="$( set +e ; "${DOCKER_MACHINE}" status "${VM}" )"
+  357  if [ "${VM_STATUS}" != "Running" ]; then   "${DOCKER_MACHINE}" start "${VM}";   yes | "${DOCKER_MACHINE}" regenerate-certs "${VM}"; fi
+  358  STEP="Setting env"
+  359  eval "$("${DOCKER_MACHINE}" env --shell=bash --no-proxy "${VM}" | sed -e "s/export/SETX/g" | sed -e "s/=/ /g")" &> /dev/null #for persistent Environment Variables, available in next sessions
+  360  eval "$("${DOCKER_MACHINE}" env --shell=bash --no-proxy "${VM}")" #for transient Environment Variables, available in current session
+  361  STEP="Finalize"
+  362  clear
+  363  cat << EOF
+  364                          ##         .
+  365                    ## ## ##        ==
+  366                 ## ## ## ## ##    ===
+  367             /"""""""""""""""""\___/ ===
+  368        ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+  369             \______ o           __/
+  370               \    \         __/
+  371                \____\_______/
+  372  EOF
+  373  echo -e "${BLUE}docker${NC} is configured to use the ${GREEN}${VM}${NC} machine with IP ${GREEN}$("${DOCKER_MACHINE}" ip ${VM})${NC}"
+  374  echo "For help getting started, check out the docs at https://docs.docker.com"
+  375  echo
+  376  echo 
+  377  #cd #Bad: working dir should be whatever directory was invoked from rather than fixed to the Home folder
+  378  docker () {   MSYS_NO_PATHCONV=1 docker.exe "$@"; }
+  379  export -f docker
+  380  if [ $# -eq 0 ]; then   echo "Start interactive shell";   exec "$BASH" --login -i; else   echo "Start shell with command";   exec "$BASH" -c "$*"; fi
+  381  #!/bin/bash
+  382  trap '[ "$?" -eq 0 ] || read -p "Looks like something went wrong in step ´$STEP´... Press any key to continue..."' EXIT
+  383  #Quick Hack: used to convert e.g. "C:\Program Files\Docker Toolbox" to "/c/Program Files/Docker Toolbox"
+  384  win_to_unix_path(){  	wd="$(pwd)"; 	cd "$1"; 		the_path="$(pwd)"; 	cd "$wd"; 	echo $the_path; }
+  385  # This is needed  to ensure that binaries provided
+  386  # by Docker Toolbox over-ride binaries provided by
+  387  # Docker for Windows when launching using the Quickstart.
+  388  export PATH="$(win_to_unix_path "${DOCKER_TOOLBOX_INSTALL_PATH}"):$PATH"
+  389  VM=${DOCKER_MACHINE_NAME-default}
+  390  DOCKER_MACHINE="${DOCKER_TOOLBOX_INSTALL_PATH}\docker-machine.exe"
+  391  STEP="Looking for vboxmanage.exe"
+  392  if [ ! -z "$VBOX_MSI_INSTALL_PATH" ]; then   VBOXMANAGE="${VBOX_MSI_INSTALL_PATH}VBoxManage.exe"; else   VBOXMANAGE="${VBOX_INSTALL_PATH}VBoxManage.exe"; fi
+  393  BLUE='\033[1;34m'
+  394  GREEN='\033[0;32m'
+  395  NC='\033[0m'
+  396  #clear all_proxy if not socks address
+  397  if  [[ $ALL_PROXY != socks* ]]; then   unset ALL_PROXY; fi
+  398  if  [[ $all_proxy != socks* ]]; then   unset all_proxy; fi
+  399  if [ ! -f "${DOCKER_MACHINE}" ]; then   echo "Docker Machine is not installed. Please re-run the Toolbox Installer and try again.";   exit 1; fi
+  400  if [ ! -f "${VBOXMANAGE}" ]; then   echo "VirtualBox is not installed. Please re-run the Toolbox Installer and try again.";   exit 1; fi
+  401  "${VBOXMANAGE}" list vms | grep \""${VM}"\" &> /dev/null
+  402  VM_EXISTS_CODE=$?
+  403  set -e
+  404  STEP="Checking if machine $VM exists"
+  405  if [ $VM_EXISTS_CODE -eq 1 ]; then   "${DOCKER_MACHINE}" rm -f "${VM}" &> /dev/null || :;   rm -rf ~/.docker/machine/machines/"${VM}"   if [ "${HTTP_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env HTTP_PROXY=$HTTP_PROXY";   fi;   if [ "${HTTPS_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env HTTPS_PROXY=$HTTPS_PROXY";   fi;   if [ "${NO_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env NO_PROXY=$NO_PROXY";   fi;   "${DOCKER_MACHINE}" create -d virtualbox $PROXY_ENV "${VM}"; fi
+  406  STEP="Checking status on $VM"
+  407  VM_STATUS="$( set +e ; "${DOCKER_MACHINE}" status "${VM}" )"
+  408  if [ "${VM_STATUS}" != "Running" ]; then   "${DOCKER_MACHINE}" start "${VM}";   yes | "${DOCKER_MACHINE}" regenerate-certs "${VM}"; fi
+  409  STEP="Setting env"
+  410  eval "$("${DOCKER_MACHINE}" env --shell=bash --no-proxy "${VM}" | sed -e "s/export/SETX/g" | sed -e "s/=/ /g")" &> /dev/null #for persistent Environment Variables, available in next sessions
+  411  eval "$("${DOCKER_MACHINE}" env --shell=bash --no-proxy "${VM}")" #for transient Environment Variables, available in current session
+  412  STEP="Finalize"
+  413  clear
+  414  cat << EOF
+  415                          ##         .
+  416                    ## ## ##        ==
+  417                 ## ## ## ## ##    ===
+  418             /"""""""""""""""""\___/ ===
+  419        ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+  420             \______ o           __/
+  421               \    \         __/
+  422                \____\_______/
+  423  EOF
+  424  echo -e "${BLUE}docker${NC} is configured to use the ${GREEN}${VM}${NC} machine with IP ${GREEN}$("${DOCKER_MACHINE}" ip ${VM})${NC}"
+  425  echo "For help getting started, check out the docs at https://docs.docker.com"
+  426  echo
+  427  echo 
+  428  #cd #Bad: working dir should be whatever directory was invoked from rather than fixed to the Home folder
+  429  docker () {   MSYS_NO_PATHCONV=1 docker.exe "$@"; }
+  430  export -f docker
+  431  if [ $# -eq 0 ]; then   echo "Start interactive shell";   exec "$BASH" --login -i; else   echo "Start shell with command";   exec "$BASH" -c "$*"; fi
+  432  #!/bin/bash
+  433  trap '[ "$?" -eq 0 ] || read -p "Looks like something went wrong in step ´$STEP´... Press any key to continue..."' EXIT
+  434  #Quick Hack: used to convert e.g. "C:\Program Files\Docker Toolbox" to "/c/Program Files/Docker Toolbox"
+  435  win_to_unix_path(){  	wd="$(pwd)"; 	cd "$1"; 		the_path="$(pwd)"; 	cd "$wd"; 	echo $the_path; }
+  436  # This is needed  to ensure that binaries provided
+  437  # by Docker Toolbox over-ride binaries provided by
+  438  # Docker for Windows when launching using the Quickstart.
+  439  export PATH="$(win_to_unix_path "${DOCKER_TOOLBOX_INSTALL_PATH}"):$PATH"
+  440  VM=${DOCKER_MACHINE_NAME-default}
+  441  DOCKER_MACHINE="${DOCKER_TOOLBOX_INSTALL_PATH}\docker-machine.exe"
+  442  STEP="Looking for vboxmanage.exe"
+  443  if [ ! -z "$VBOX_MSI_INSTALL_PATH" ]; then   VBOXMANAGE="${VBOX_MSI_INSTALL_PATH}VBoxManage.exe"; else   VBOXMANAGE="${VBOX_INSTALL_PATH}VBoxManage.exe"; fi
+  444  BLUE='\033[1;34m'
+  445  GREEN='\033[0;32m'
+  446  NC='\033[0m'
+  447  #clear all_proxy if not socks address
+  448  if  [[ $ALL_PROXY != socks* ]]; then   unset ALL_PROXY; fi
+  449  if  [[ $all_proxy != socks* ]]; then   unset all_proxy; fi
+  450  if [ ! -f "${DOCKER_MACHINE}" ]; then   echo "Docker Machine is not installed. Please re-run the Toolbox Installer and try again.";   exit 1; fi
+  451  if [ ! -f "${VBOXMANAGE}" ]; then   echo "VirtualBox is not installed. Please re-run the Toolbox Installer and try again.";   exit 1; fi
+  452  "${VBOXMANAGE}" list vms | grep \""${VM}"\" &> /dev/null
+  453  VM_EXISTS_CODE=$?
+  454  set -e
+  455  STEP="Checking if machine $VM exists"
+  456  if [ $VM_EXISTS_CODE -eq 1 ]; then   "${DOCKER_MACHINE}" rm -f "${VM}" &> /dev/null || :;   rm -rf ~/.docker/machine/machines/"${VM}"   if [ "${HTTP_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env HTTP_PROXY=$HTTP_PROXY";   fi;   if [ "${HTTPS_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env HTTPS_PROXY=$HTTPS_PROXY";   fi;   if [ "${NO_PROXY}" ]; then     PROXY_ENV="$PROXY_ENV --engine-env NO_PROXY=$NO_PROXY";   fi;   "${DOCKER_MACHINE}" create -d virtualbox $PROXY_ENV "${VM}"; fi
+  457  STEP="Checking status on $VM"
+  458  VM_STATUS="$( set +e ; "${DOCKER_MACHINE}" status "${VM}" )"
+  459  if [ "${VM_STATUS}" != "Running" ]; then   "${DOCKER_MACHINE}" start "${VM}";   yes | "${DOCKER_MACHINE}" regenerate-certs "${VM}"; fi
+  460  STEP="Setting env"
+  461  eval "$("${DOCKER_MACHINE}" env --shell=bash --no-proxy "${VM}" | sed -e "s/export/SETX/g" | sed -e "s/=/ /g")" &> /dev/null #for persistent Environment Variables, available in next sessions
+  462  eval "$("${DOCKER_MACHINE}" env --shell=bash --no-proxy "${VM}")" #for transient Environment Variables, available in current session
+  463  STEP="Finalize"
+  464  clear
+  465  cat << EOF
+  466                          ##         .
+  467                    ## ## ##        ==
+  468                 ## ## ## ## ##    ===
+  469             /"""""""""""""""""\___/ ===
+  470        ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+  471             \______ o           __/
+  472               \    \         __/
+  473                \____\_______/
+  474  EOF
+  475  echo -e "${BLUE}docker${NC} is configured to use the ${GREEN}${VM}${NC} machine with IP ${GREEN}$("${DOCKER_MACHINE}" ip ${VM})${NC}"
+  476  echo "For help getting started, check out the docs at https://docs.docker.com"
+  477  echo
+  478  echo 
+  479  #cd #Bad: working dir should be whatever directory was invoked from rather than fixed to the Home folder
+  480  docker () {   MSYS_NO_PATHCONV=1 docker.exe "$@"; }
+  481  export -f docker
+  482  if [ $# -eq 0 ]; then   echo "Start interactive shell";   exec "$BASH" --login -i; else   echo "Start shell with command";   exec "$BASH" -c "$*"; fi
+  483  docker run --rm --name standalone  -e ATTACKED_HOST=http://localhost:8080  -v c:/locust-scripts:/locust  -p 8081:8089 -d  grubykarol/locust:0.8.1-py3.6
+  484  cd d"
+cd ":
+  485  cd d:
+  486  cd D:\Learnings\python\files\newLocusts
+  487  cd Learnings/python/files/newLocusts/
+  488  docker run --rm --name standalone  -e ATTACKED_HOST=http://localhost:8080  -v c:/locust-scripts:/locust  -p 8081:8089 -d  grubykarol/locust:0.8.1-py3.6
+  489  docker run --rm --name standalone  -e ATTACKED_HOST=http://localhost:8080  -v scripts:/locust  -p 8081:8089 -d  grubykarol/locust:0.8.1-py3.6
+  490  docker ps
+  491  docker ps -a
+  492  docker run -it --rm --name standalone  -e ATTACKED_HOST=http://localhost:8080  -v scripts:/locust  -p 8089:8089 -d  grubykarol/locust:0.8.1-py3.6
+  493  docker ps -a
+  494  docker images
+  495  docker build -t="hariom/medium.com" .
+  496  docker images
+  497  docker run --rm --name standalone  -e ATTACKED_HOST=http://localhost:8080  -v scripts:/locust  -p 8081:8089 -d hariom/medium.com
+  498  docker ps -a
+  499  curl "http://localhost:8081"
+  500  curl "http://localhost:8089"
+  501  docker ps -a
+  502  docker stop 109606a3c0da
+  503  docker ps -a
+  504  docker build -t christianbladescb-mylocust .
+  505  docker images
+  506  docker run --rm -P  christianbladescb-mylocust
+  507  docker run --rm -P  christianbladescb-mylocust --host=http://localhost:8080/customers --web-port=8088
+  508  docker run --rm -P  christianbladescb-mylocust --ATTACKED_HOST=http://localhost:8080/customers --web-port=8088
+  509  docker run --rm -P  christianbladescb-mylocust -ATTACKED_HOST=http://localhost:8080/customers --web-port=8088
+  510  docker run --rm -P  christianbladescb-mylocust ATTACKED_HOST=http://localhost:8080/customers --web-port=8088
+  511  ls
+  512  cd ..
+  513  cd christianbladescb-locustio/
+  514  docker build -t christianbladescb-mylocust .
+  515  docker images
+  516  docker run --rm -P christianbladescb-mylocust
+  517  docker run --rm -P christianbladescb-mylocust --web-port=8088 --host="http://localhost:8080/customers"
+  518  docker run --rm -v `pwd`:/locust -p 8089:8089 christianbladescb/locustio --host http://localhost:8080/customers
+  519  pwd'
+  520  `pwd`
+  521  'pwd'
+  522  'pwd'
+  523  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb/locustio --host http://localhost:8080/customers
+  524  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb/locustio --host http://localhost:8080/customers --no-web -c 100 -r 10
+  525  docker images
+  526  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb-mylocust --host http://localhost:8080/customers --no-web -c 100 -r 10
+  527  docker images
+  528  cd ..
+  529  cd newLocusts/
+  530  ll
+  531  cd ..
+  532  ll
+  533  locust -f locustfile.py --host=http://example.com --no-web --clients=20  --hatch-rate=20 --num-request=1000  --only-summary  > locust.log   2>&1
+  534  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb-mylocust --host http://localhost:8080/customers --no-web -c 100 -r 10 --num-request=1000  --only-summary  > locust.log 
+  535  ls
+  536  cd christianbladescb-locustio/
+  537  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb-mylocust --host http://localhost:8080/customers --no-web -c 100 -r 10 --num-request=1000  --only-summary  > locust.log 
+  538  docker ps 
+  539  docker stop aa1
+  540  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb-mylocust --host http://localhost:8080/customers --no-web -c 100 -r 10 --num-request=1000  --only-summary  > locust.log 
+  541  docker images
+  542  docker run --rm -v 'pwd':/locust -p 8089:8089 hariom-locallocust --host http://localhost:8080/customers --no-web -c 100 -r 10
+  543  cd ..
+  544  docket build  -t="hariom-locallocust" .
+  545  docker build  -t="hariom-locallocust" .
+  546  docker ps
+  547  docker ps -a
+  548  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb-mylocust --host http://localhost:8080/customers --no-web -c 100 -r 10
+  549  docker run --rm -v 'pwd':/locust -p 8089:8089 christianbladescb-mylocust --host http://localhost:8080/ --no-web -c 100 -r 10
+  550  docker ps -a
+  551  docker login --username hmisra --password admin@123
+  552  docker ps -a
+  553  docker login --username hmisra --password admin@123
+  554  docker tag hmisra/locuststest:workingv2 hmisra/locuststest:workingv2
+  555  docker tag hmisra/locuststest:workingv2 hmisra/locuststest:workingv3
+  556  docker tag christianbladescb-mylocust hmisra/locuststest:workingv2
+  557  docker push hmisra/locuststest:workingv2
+  558  cd ..
+  559  ll
+  560  cd files/
+  561  ll
+  562  cd hari-locallocustio/
+  563  docker build -t="hari-locallocustio" .
+  564  docker images
+  565  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/ --no-web -c 100 -r 10
+  566  docker ps 
+  567  docker stop 30f0635ac726
+  568  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/ --no-web -c 100 -r 10
+  569  docker ps
+  570  docker stop 12e
+  571  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/customers --no-web -c 100 -r 10
+  572  docker tag hari-locallocust hmisra/locuststest:workinglatestfinal
+  573  docker tag hari-locallocustio hmisra/locuststest:workinglatestfinal
+  574  docker push hmisra/locuststest:workinglatestfinal
+  575  docker pull mongo
+  576  cd ..
+  577  cd ..
+  578  cd ..
+  579  ls
+  580  cd API-Springboot/
+  581  ll
+  582  cd ..
+  583  cd Gradle/
+  584  ll
+  585  cd customers
+  586  ll
+  587  docker pull mongo
+  588  ls
+  589  docker images
+  590  docker run --name customers-mongo -d mongo --auth
+  591  docker exec -it customers-mongo mongo admin
+  592  docker ps -a
+  593  docekr build -t customers-springboot .
+  594  docker build -t customers-springboot .
+  595  docker build -t customers-springboot .
+  596  docker images
+  597  docker container
+  598  docker ps
+  599  docker run --name customers-springboot --link customers-mongo -d customers-springboot
+  600  docker run --name customers-springboot --link customers-mongo -d customers-springboot -p 8080:8080
+  601  docker log customers-springboot
+  602  docker run --name customers-springboot-app -d customers-springboot
+  603  docker ps
+  604  docker run --name customers-springboot-app --link customers-mongo -d customers-springboot -p 8080:8080
+  605  docker stop customers-springboot-app
+  606  docker run --name customers-springboot-app --link customers-mongo -d customers-springboot -p 8080:8080
+  607  docker ps
+  608  docker stop 6f
+  609  docker ps -a
+  610  docker run --name customers-springboot-app --link customers-mongo:mongo -d customers-springboot
+  611  docker rm fce 6f1
+  612  docker ps -a
+  613  docker rm 690 
+  614  docker run --name customers-springboot-app --link customers-mongo:mongo -d customers-springboot
+  615  locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/customers --no-web -c 100 -r 1
+  616  cd ..
+  617  cd D:\Learnings\python\files\hari-locallocustio
+  618  cd D:/Learnings/python/files/hari-locallocustio
+  619  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/customers --no-web -c 100 -r 10
+  620  docker ps 
+  621  docker stop 64c
+  622  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/customers --no-web -c 100 -r 10
+  623  docker ps -a
+  624  docker rm 770 b21
+  625  docker stop 770
+  626  docker rm 770 b21
+  627  docker ps -a
+  628  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/ --no-web -c 100 -r 10
+  629  docker stop .
+  630  docker ps -a
+  631  docker stop a8c
+  632  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/customers --no-web -c 100 -r 10
+  633  docker ps -a
+  634  docker stop a3d
+  635  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host=http://localhost:8080/customers --no-web -c 100 -r 10
+  636  docker ps -a
+  637  docker stop f837
+  638  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/ --no-web -c 100 -r 10
+  639  docker ps
+  640  docker stop d4
+  641  docker build -t="hari-locallocustio" .
+  642  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://localhost:8080/ --no-web -c 100 -r 10
+  643  docker ps
+  644  docker stop b
+  645  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio -host=http://localhost:8080/customers --no-web -c 100 -r 10
+  646  docker ps
+  647  docker ps -a
+  648  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host='http://localhost:8080/customers' --no-web -c 100 -r 10
+  649  docker ps
+  650  docker stop 6
+  651  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http://api-preprod.marksandspencer.com --no-web -c 100 -r 10
+  652  docker stop $(docker ps -aq)
+  653  docker build -t "hari-locallocustio2" .
+  654  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host http://api-preprod.marksandspencer.com --no-web -c 100 -r 10
+  655  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http\://localhost\:8080/customers --no-web -c 100 -r 10
+  656  docker stop $(docker ps -aq)
+  657  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host http\://localhost\:8080/customers --no-web -c 100 -r 10
+  658  docker stop $(docker ps -aq)
+  659  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host "http://localhost:8080/customers" --no-web -c 100 -r 10
+  660  docker build -t "hari-locallocustio2" .
+  661  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host "http://localhost:8080/customers" --no-web -c 100 -r 10
+  662  docker stop $(docker ps -aq)
+  663  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host "http://localhost:8080/customers" --no-web -c 100 -r 10
+  664  docker stop $(docker ps -aq)
+  665  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host='http://localhost:8080/customers' --no-web -c 100 -r 10
+  666  docker stop $(docker ps -aq)
+  667* 
+  668  docker stop $(docker ps -aq)
+  669  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host='localhost:8080/customers' --no-web -c 100 -r 10
+  670  docker stop $(docker ps -aq)
+  671  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host='http://localhost:8080/customers' --no-web -c 100 -r 10
+  672  docker stop $(docker ps -aq)
+  673  netstat -ap 
+  674  docker-machine ip
+  675  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host='http://localhost:8080/customers'
+  676  netstat -ap 
+  677  docker stop $(docker ps -aq)
+  678  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio2 --host='http://192.168.65.240:8080/customers'
+  679  docker stop $(docker ps -aq)
+  680  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host='http://192.168.65.240:8080/customers'
+  681  docker stop $(docker ps -aq)
+  682  docker images
+  683  docker run --rm -p 8089:8089 hari-locallocustio --host='http://192.168.65.240:8080/customers'
+  684  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host='http://192.168.65.240:8080/customers'
+  685  docker stop $(docker ps -aq)
+  686  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host='http://192.168.65.240:8080/customers' --no-web -c 100 -r 10
+  687  docker stop $(docker ps -aq)
+  688  docker images
+  689  docker run --rm -v 'pwd':/locust -p 8089:8089 hari-locallocustio --host='http://192.168.65.240:8080/customers'
+  690  docker images
+  691  docker images eb
+  692  docker rmi e38
+  693  docker ps
+  694  docker ps
+  695  docker ps -a
+  696  docker images
+  697  docker image rmi 31
+  698  docker rmi 31e17b0746e4
+  699  docker images
+  700  docker rmi 52bd96097bcf 
+  701  docker images
+  702  docker rmi 6819f5e2c673
+  703  docker rmi a18795616569
+  704  docke images
+  705  docker images
+  706  docker rmi bd92a7408006
+  707  docker rmi 7cf01e46fcf8
+  708  docker images
+  709  docker rmi c27db4579b2d
+  710  docker images
+  711  docker rmi ce0ffa291c7d
+  712  docker images -f “dangling=true” -q
+  713  docker images --filter “dangling=true” -q --no-trunc
+  714  docker images --filter dangling=true -q --no-trunc
+  715  docker rmi $(docker images --filter dangling=true -q --no-trunc)
+  716  docker images
+  717  history
+  718  history > command.txt
